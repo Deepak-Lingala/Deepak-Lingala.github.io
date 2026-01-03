@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Lingala - Data Science Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .header .tagline {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+        }
+
+        /* Section Cards */
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        /* Education & Experience */
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #667eea;
+        }
+
+        .timeline-item h3 {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .meta {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-item li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-item li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-category p {
+            color: #555;
+            font-size: 0.9em;
+            line-height: 1.8;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #667eea;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+
+        .project-card .tech-stack {
+            color: #667eea;
+            font-size: 0.85em;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .project-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-card li {
+            padding: 4px 0;
+            padding-left: 18px;
+            position: relative;
+            font-size: 0.9em;
+            color: #444;
+        }
+
+        .project-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Awards Section */
+        .awards-list {
+            list-style: none;
+        }
+
+        .awards-list li {
+            padding: 12px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1em;
+            border-bottom: 1px solid #eee;
+        }
+
+        .awards-list li:before {
+            content: "🏆";
+            position: absolute;
+            left: 0;
+        }
+
+        .awards-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>DEEPAK LINGALA</h1>
+            <p class="tagline">Graduate Data Scientist | AI/ML Engineer | Research Enthusiast</p>
+            <div class="contact-info">
+                <a href="mailto:deepaklingala@arizona.edu">📧 deepaklingala@arizona.edu</a>
+                <a href="tel:+15204817386">📱 +1 (520) 481-7386</a>
+                <a href="https://linkedin.com/in/deepak-lingala-a93b8a268" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/Deepak-Lingala" target="_blank">💻 GitHub</a>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="section">
+            <h2>About Me</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                I'm a Master's student in Data Science at the University of Arizona with a passion for building intelligent systems that solve real-world problems. My expertise spans machine learning, deep learning, cloud architecture, and full-stack development. I have research experience in multi-modal medical AI, working on rare disease detection and automated report generation, and I'm actively seeking opportunities in AI engineering and data science.
+            </p>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section">
+            <h2>Education</h2>
+            <div class="timeline-item">
+                <h3>University of Arizona</h3>
+                <p class="meta">Master of Science in Data Science | Aug 2024 – May 2026 | Tucson, AZ</p>
+                <p><strong>Coursework:</strong> Data Mining & Discovery, Data Analysis & Visualization, Machine Learning, Applied Natural Language Processing</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Anurag University</h3>
+                <p class="meta">Bachelor of Engineering in AI & Machine Learning | Nov 2020 – Jun 2024 | Hyderabad, India</p>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="timeline-item">
+                <h3>Graduate Research Data Scientist</h3>
+                <p class="meta">University of Arizona (VSI Lab) | Jan 2025 – May 2025 | Tucson, AZ</p>
+                <ul>
+                    <li>Engineered multi-modal deep learning pipeline integrating Vision Transformer (ViT), BioMedCLIP, Clinical-T5, and Flamingo-CXR, achieving AUROC >0.90 for common conditions and >0.75 for rare pathologies</li>
+                    <li>Enhanced rare disease detection by 35% through distribution-aware sampling, curriculum learning, and focal loss implementation while maintaining 99% specificity</li>
+                    <li>Advanced automated medical report generation achieving BLEU-4 score of 43.5% and ROUGE-L of 34.6%, surpassing prior benchmarks by over 2×</li>
+                    <li>Developed end-to-end evaluation framework with clinically relevant metrics for medical AI model assessment</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Cloud Architect & AI-ML Engineer</h3>
+                <p class="meta">EduSkills | May 2023 – Nov 2023 | Hyderabad, India</p>
+                <ul>
+                    <li>Designed AWS-based data infrastructure (S3, EC2, RDS, Lambda) achieving 99.99% uptime and reducing system latency by 30%</li>
+                    <li>Automated cloud provisioning with CloudFormation, cutting deployment time by 40%</li>
+                    <li>Built sales forecasting model using Amazon Forecast that reduced stockouts by 30%</li>
+                    <li>Developed sentiment analysis pipeline processing 10,000+ customer reviews with 90% accuracy</li>
+                    <li>Implemented NLP-driven chatbot with Amazon Lex, improving query response times by 60%</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <p>Python, SQL, R, JavaScript</p>
+                </div>
+                <div class="skill-category">
+                    <h3>ML & Deep Learning</h3>
+                    <p>Scikit-learn, TensorFlow, Keras, PyTorch, OpenCV, Vision Transformers (ViT)</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & Big Data</h3>
+                    <p>AWS (S3, EC2, RDS, Lambda, CloudFormation), Apache Spark, Docker</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Database Management</h3>
+                    <p>MySQL, PostgreSQL, Oracle, MongoDB, NoSQL, FAISS</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Visualization Tools</h3>
+                    <p>Power BI, Tableau, Microsoft Excel, Matplotlib, Seaborn, Plotly</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Libraries & Frameworks</h3>
+                    <p>NumPy, Pandas, SciPy, spaCy, Flask, FastAPI, LangChain, LangGraph, Streamlit, React, Node.js</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>MarketInsight AI Agents</h3>
+                    <p class="tech-stack">Python, LangChain, LangGraph, FastAPI, React, OpenAI, YFinance</p>
+                    <ul>
+                        <li>Developed AI-powered stock market analysis platform using autonomous multi-agent system</li>
+                        <li>Implemented 16 specialized financial tools for comprehensive stock analysis</li>
+                        <li>Engineered agentic workflow with dynamic tool selection and reasoning capabilities</li>
+                        <li>Built high-performance FastAPI backend with Server-Sent Events (SSE) for real-time streaming</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3>Airlines RAG System</h3>
+                    <p class="tech-stack">Python, FAISS, Sentence-Transformers, Ollama, Streamlit, BeautifulSoup</p>
+                    <ul>
+                        <li>Built RAG chatbot for Delta Airlines baggage policies using locally deployed LLMs</li>
+                        <li>Engineered FAISS vector database with 92% relevance accuracy</li>
+                        <li>Integrated Ollama (llama3.2) for local language generation</li>
+                        <li>Deployed interactive Streamlit interface with conversation history</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3>AI-Powered Resume Reviewer</h3>
+                    <p class="tech-stack">Python, FastAPI, GPT-4, spaCy, PyPDF2</p>
+                    <ul>
+                        <li>Developed web application for AI-powered resume feedback</li>
+                        <li>Integrated GPT-4 API for dynamic resume evaluation</li>
+                        <li>Engineered PDF/DOCX parsing pipeline with 95% accuracy</li>
+                        <li>Deployed full-stack solution using FastAPI and cloud storage</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3>Early Disease Prediction System</h3>
+                    <p class="tech-stack">Python, Flask, SQL, Scikit-learn</p>
+                    <ul>
+                        <li>Created decision tree classifier with 95.6% accuracy on 10,000+ medical records</li>
+                        <li>Designed SQL-integrated storage improving data retrieval by 50%</li>
+                        <li>Built interactive Flask web interface for real-time predictions</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3>Air Quality Prediction & Analysis</h3>
+                    <p class="tech-stack">Python, Power BI, Scikit-learn, PCA</p>
+                    <ul>
+                        <li>Conducted EDA and dimensionality reduction on 50,000+ data points</li>
+                        <li>Trained ensemble models with 25% RMSE improvement</li>
+                        <li>Visualized insights in Power BI dashboards</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h3>Movie Recommender System</h3>
+                    <p class="tech-stack">Python, Pandas, Scikit-learn, Cosine Similarity</p>
+                    <ul>
+                        <li>Developed content-based recommender with 85% user satisfaction</li>
+                        <li>Processed dataset of 45,000+ movies and 26 million ratings</li>
+                        <li>Optimized algorithm reducing computation time by 40%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Awards Section -->
+        <div class="section">
+            <h2>Leadership & Recognition</h2>
+            <ul class="awards-list">
+                <li><strong>Published Researcher:</strong> Authored "Early Disease Prediction Based on Symptoms Using Machine Learning" in IJIRSET, Volume 13, Issue 5, May 2024</li>
+                <li><strong>Microsoft Power BI Data Analyst Professional Certificate</strong> – Demonstrated proficiency in data visualization and business intelligence</li>
+                <li><strong>Google Data Analytics Professional Certificate</strong> – Completed comprehensive training in data analytics methodologies</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 Deepak Lingala. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
